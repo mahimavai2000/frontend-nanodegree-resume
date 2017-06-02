@@ -9,213 +9,307 @@ h3,
 h4,
 h5,
 h6 {
-  padding: 0;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
+    padding: 0;
+    margin: 0;
+    /*font-family: "Roboto", sans-serif;*/
+    
+    font-family: 'Noto Serif', serif;
 }
-
 .clear-fix {
-  overflow: auto;
+    overflow: auto;
 }
-
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+    padding: 0 5%;
 }
-
 h1 {
-  font-size: 40px;
-  color: #f5a623;
-  line-height: 48px;
-  display: inline;
+    font-size: 40px;
+    color: #f5a623;
+    line-height: 48px;
+    display: inline;
 }
-
 h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    color: #8B4513;
+    line-height: 29px;
+    padding: 10px;
 }
-
 h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
+    font-style: italic;
+    font-size: 20px;
+    color: #8B4513;
+    line-height: 22px;
+    text-align: left;
+    padding: 10px 0px;
 }
-
 h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 17px;
 }
-
 h2,
-h3,
 h4,
 h5 {
-  padding: 10px 5%;
-
+    padding: 10px 5%;
 }
-
-
+.objective {
+    font-family: 'Niconne', cursive;
+    border: 3px ridge orange;
+    border-radius: 15px 50px;
+    font-size: 25px;
+    color: white;
+    line-height: 22px;
+    letter-spacing: 2px;
+    text-align: right;
+    text-align: justify;
+}
 .date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
+    font-style: italic;
+    font-size: 15px;
+    color: #999;
+    line-height: 16px;
+    float: left;
 }
-
 .location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
+    font-style: italic;
+    font-size: 15px;
+    color: #999;
+    line-height: 16px;
+    float: right;
 }
-
 p {
-  font-size: 14px;
-  color: #333;
-  line-height: 21px;
+    font-size: 14px;
+    color: #333;
+    line-height: 21px;
 }
-
 a {
-  color: #1199c3;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
+    color: #1199c3;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
 }
-
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
+    font-style: italic;
+    font-size: 18px;
+    color: #f3f3f3;
+    line-height: 28px;
 }
-
 #skills-h3 {
-  color: #f5ae23;
-  display: none;
+    color: #f5ae23;
+    display: none;
 }
-
+#objectiveh3 {
+    color: #f5ae23;
+    display: none;
+}
+.items_list_style {
+    list-style-type: square;
+}
 .orange {
-  background-color: #f5ae23;
+    background-color:
+    /*#f5ae23; #f4bf42; #FFDAB9; #e94964;*/
+    
+    #f4bf42;
 }
-
 .orange-text {
-  color: #f5ae23;
+    color: #f5ae23;
 }
-
 .white-text {
-  font-weight: bold;
-  color: #fff;
+    color: #fff;
 }
+/*#f3f3f3 #FFF0F5 #FFFFF0; #F5F5DC*/
 
 .gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear: both;
+    background-color: #FFFFF0;
+    padding-bottom: 10px;
+    clear: both;
 }
-
 .dark-gray {
-  background-color: #4a4a4a;
+    background-color: #4a4a4a;
 }
+.blue {
+    background-color: #483D8B;
+}
+/* TODO: Replace with image later #484848 #483D8B  #008080   #708090 */
 
-/* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+    background-color: #483D8B;
 }
-
+.flex {
+    display: flex;
+}
 .flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
 }
-
 .flex-column {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
 }
-
 .center-content {
-  padding: 2.5% 5%;
+    padding: 2.5% 5%;
 }
-
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
-
 .biopic {
-  float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
+    float: left;
+    padding: 10px;
+    width: 200px;
+    display: none;
 }
-
 img {
-  padding: 10px;
+    padding: 10px;
 }
-
 span {
-  padding: 5px;
+    padding: 5px;
 }
-
 #lets-connect {
-  text-align: center;
+    text-align: center;
 }
-
+.subheader {
+    background-color: #87CEFA;
+}
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
+    #lets-connect {
+        margin-top: 5%;
+    }
 }
-
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
+@media only screen and (max-width: 900px) {
+    .biopic {
+        width: 175px;
+    }
+    #barchart {
+        width: 690px;
+        height: 250px;
+    }
 }
-
 @media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
+    #lets-connect {
+        margin-top: 10%;
+    }
+    .biopic {
+        width: 150px;
+    }
+    .welcome-message {
+        display: none;
+    }
+    #barchart {
+        width: 200px;
+        height: 250px;
+    }
 }
-
 #map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
-}
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
-}
-
-@media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
     display: block;
-  }
+    height: 100%;
+    margin: 0 5%;
+}
+#mapDiv {
+    height: 400px;
+    width: 100%;
+    padding-bottom: 5%;
+}
+@media only screen and (min-width: 750px) {
+    #skills-h3,
+    #objectiveh3,
+    .biopic {
+        display: block;
+    }
+}
+/* Bar chart for Marks Scored */
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+#barchart {
+    display: block;
+    height: 100%;
+    margin: 0 0%;
+    width: 100%;
+}
+.bar {
+    fill: #20B2AA;
+    width: 20%;
+}
+.bar:hover {
+    fill: orangered;
+    width: 20%;
+}
+.x.axis path {
+    display: none;
+}
+.d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+/* Creates a small triangle extender for the tooltip */
+
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 20px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+/* Style northward tooltips differently */
+
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+@media only screen and (max-width: 470px) {
+    .axis text {
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 280px) {
+    .x.axis {
+        display: none;
+    }    
+}
+/* Bubble chart for Project Details */
+
+#mainBubble {
+    background: #fff;
+    /* border: solid 1px #ddd;
+      box-shadow: 0 0 4px rgba(0,0,0,0);
+      font: 10px sans-serif;*/
+    
+    font-family: inherit;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+#mainBubble svg {
+    left: 30px;
+    position: absolute;
+    top: 0;
+}
+#mainBubble circle.topBubble {
+    fill: #aaa;
+    stroke: #666;
+    stroke-width: 1.5px;
 }
