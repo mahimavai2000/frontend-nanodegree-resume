@@ -190,10 +190,6 @@ span {
     .biopic {
         width: 175px;
     }
-    #barchart {
-        width: 690px;
-        height: 250px;
-    }
 }
 @media only screen and (max-width: 750px) {
     #lets-connect {
@@ -204,10 +200,6 @@ span {
     }
     .welcome-message {
         display: none;
-    }
-    #barchart {
-        width: 200px;
-        height: 250px;
     }
 }
 #map {
@@ -280,36 +272,23 @@ span {
     top: 100%;
     left: 0;
 }
-@media only screen and (max-width: 470px) {
+@media only screen and (max-width: 800px) {
+    .axis text {
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 650px) {
     .axis text {
         font-size: 10px;
     }
 }
-@media only screen and (max-width: 280px) {
+@media only screen and (max-width: 550px) {
+    .axis text {
+        font-size: 8px;
+    }
+}
+@media only screen and (max-width: 300px) {
     .x.axis {
         display: none;
-    }    
-}
-/* Bubble chart for Project Details */
-
-#mainBubble {
-    background: #fff;
-    /* border: solid 1px #ddd;
-      box-shadow: 0 0 4px rgba(0,0,0,0);
-      font: 10px sans-serif;*/
-    
-    font-family: inherit;
-    height: 100%;
-    position: relative;
-    width: 100%;
-}
-#mainBubble svg {
-    left: 30px;
-    position: absolute;
-    top: 0;
-}
-#mainBubble circle.topBubble {
-    fill: #aaa;
-    stroke: #666;
-    stroke-width: 1.5px;
+    }
 }
