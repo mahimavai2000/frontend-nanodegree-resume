@@ -109,14 +109,10 @@ education.display = function() {
         var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree;
         var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
         var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
+        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
 
-        $(".education-entry:last").append(formattedSchoolNameDegree, formattedSchoolDates, formattedSchoolLocation);
-        if (education.schools[i].majors.length > 0) {
-            for (var j = 0; j < education.schools[i].majors.length; j++) {
-                var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[j]);
-                $(".education-entry:last").append(formattedSchoolMajor);
-            }
-        }
+        $(".education-entry:last").append(formattedSchoolNameDegree, formattedSchoolDates, formattedSchoolLocation, formattedSchoolMajor);
+
     }
     if (education.onlineCourses.length > 0) {
         $(".education-entry").append(HTMLonlineClasses);
