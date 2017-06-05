@@ -40,103 +40,98 @@ bio.display = function() {
 
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
-    $("#topContacts").append(formattedMobile);
-    $("#topContacts").append(formattedEmail);
-    $("#topContacts").append(formattedGithub);
-    $("#topContacts").append(formattedTwitter);
-    $("#topContacts").append(formattedLocation);
-    $("#header").append(formattedBiopic);
-    $("#header").append(formattedWelcomemsg);
-
+    $("#topContacts,#footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
+    $("#header").append(formattedBiopic, formattedWelcomemsg);
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
-        var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
-        $("#header").append(formattedSkills);
-        formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
-        $("#header").append(formattedSkills);
-        formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
-        $("#header").append(formattedSkills);
-        formattedSkills = HTMLskills.replace("%data%", bio.skills[3]);
-        $("#header").append(formattedSkills);
+        for (var i = 0; i < bio.skills.length; i++) {
+            var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+            $("#header").append(formattedSkills);
+        }
     }
-    $("#header").append(HTMLobjectiveStart);
-    $("#header").append(formattedObjective);
-    $("#footerContacts").append(formattedMobile);
-    $("#footerContacts").append(formattedEmail);
-    $("#footerContacts").append(formattedGithub);
-    $("#footerContacts").append(formattedTwitter);
-    $("#footerContacts").append(formattedLocation);
+    $("#header").append(HTMLobjectiveStart, formattedObjective);
 };
-bio.display();
 
 var education = {
     "schools": [{
         "name": "Holy Angels School",
         "location": "Salem, Tamilnadu, India",
         "degree": "Secondary School Education",
-        "major": "Computer Science",
+        "majors": ["Computer Science", "Physics", "Chemistry", "Mathematics"],
         "dates": "1998",
         "url": "http://example.com"
     }, {
         "name": "Golden Gates School",
         "location": "Chennai, Tamilnadu, India",
         "degree": "Higher Secondary Education",
-        "major": "Computer Science",
+        "majors": ["Computer Science", "Physics", "Chemistry", "Mathematics"],
         "dates": "1998-2000",
         "url": "http://example.com"
     }, {
         "name": "Sarada College",
         "location": "Salem, Tamilnadu, India",
         "degree": "Bachelor of Science",
-        "major": "Computer Science",
+        "majors": ["Computer Science", "Statistics", "Mathematics"],
         "dates": "2000-2003",
         "url": "http://example.com"
     }, {
         "name": "Vysya College",
         "location": "Chennai, Tamilnadu, India",
         "degree": "Masters of Science",
-        "major": "Computer Science",
+        "majors": ["Computer Science", "Statistics", "Apllied Sciences", "Mathematics"],
         "dates": "2003-2005",
         "url": "http://example.com"
     }],
 
-    "onlineCourses": {
+    "onlineCourses": [{
         "title": "Front End Development",
         "school": "Udacity",
         "dates": "2017",
         "url": "https://www.udacity.com/"
-    }
+    }, {
+        "title": "Java Script",
+        "school": "Udacity",
+        "dates": "2016",
+        "url": "https://www.udacity.com/"
+    }, {
+        "title": "HTML/CSS",
+        "school": "Udacity",
+        "dates": "2015",
+        "url": "https://www.udacity.com/"
+    }]
+
 };
 education.display = function() {
     $("#education:last").append(HTMLschoolStart);
     for (var i = 0; i < education.schools.length; i++) {
-
         var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
         var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree;
         var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
         var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
-        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
 
-        $(".education-entry:last").append(formattedSchoolNameDegree);
-        $(".education-entry:last").append(formattedSchoolDates);
-        $(".education-entry:last").append(formattedSchoolLocation);
-        $(".education-entry:last").append(formattedSchoolMajor);
-
+        $(".education-entry:last").append(formattedSchoolNameDegree, formattedSchoolDates, formattedSchoolLocation);
+        if (education.schools[i].majors.length > 0) {
+            for (var j = 0; j < education.schools[i].majors.length; j++) {
+                var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[j]);
+                $(".education-entry:last").append(formattedSchoolMajor);
+            }
+        }
     }
-    var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses.title);
-    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses.school);
-    var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
-    var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses.dates);
-    var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses.url);
+    if (education.onlineCourses.length > 0) {
+        $(".education-entry").append(HTMLonlineClasses);
+        for (var k = 0; k < education.onlineCourses.length; k++) {
+            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[k].title);
+            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[k].school);
+            var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
+            var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[k].dates);
+            var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[k].url);
 
-    $(".education-entry").append(HTMLonlineClasses);
-    $(".education-entry").append(formattedOnlineTitleSchool);
-    $(".education-entry").append(formattedOnlineDates);
-    $(".education-entry").append(formattedOnlineURL);
+            $(".education-entry").append(formattedOnlineTitleSchool, formattedOnlineDates, formattedOnlineURL);
+        }
+    }
 
 };
-education.display();
 
 var work = {
     "jobs": [{
@@ -163,13 +158,9 @@ work.display = function() {
         var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
         var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
 
-        $(".work-entry").append(formattedEmployerTitle);
-        $(".work-entry").append(formattedWorkDates);
-        $(".work-entry").append(formattedWorkLocation);
-        $(".work-entry").append(formattedWorkDescription);
+        $(".work-entry").append(formattedEmployerTitle, formattedWorkDates, formattedWorkLocation, formattedWorkDescription);
     }
 };
-work.display();
 
 var projects = {
     "projects": [{
@@ -206,10 +197,7 @@ projects.display = function() {
         var formattedProjectLocation = HTMLprojectLocation.replace("%data%", projects.projects[i].location);
         var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
 
-        $(".project-entry").append(formattedProjectTitle);
-        $(".project-entry").append(formattedProjectDates);
-        $(".project-entry").append(formattedProjectLocation);
-        $(".project-entry").append(formattedProjectDescription);
+        $(".project-entry").append(formattedProjectTitle, formattedProjectDates, formattedProjectLocation, formattedProjectDescription);
 
         if (projects.projects[i].images.length > 0) {
             for (var j = 0; j < projects.projects[i].images.length; j++) {
@@ -219,7 +207,11 @@ projects.display = function() {
             }
         }
     }
-
 };
+
+bio.display();
+education.display();
+work.display();
 projects.display();
+
 $("#mapDiv").append(googleMap);
